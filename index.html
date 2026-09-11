@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f2e8" />
+  <title>Les sons du Guide pour se retrouver en famille</title>
+  <style>
+    :root{
+      --bg:#fffdf8;
+      --paper:#fffaf0;
+      --ink:#173b46;
+      --muted:#5d747b;
+      --wood:#e8d0a7;
+      --yellow:#ffe8a8;
+      --pink:#ffd9df;
+      --mint:#dff2e6;
+      --blue:#dcebf6;
+      --line:#d9e2df;
+      --shadow:0 10px 30px rgba(34,63,69,.12);
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(216,239,222,.45), transparent 24%),
+        radial-gradient(circle at 85% 15%, rgba(255,224,228,.5), transparent 24%),
+        linear-gradient(180deg, #fffdf8 0%, #fbfaf5 100%);
+      color:var(--ink);
+    }
+
+    .wrap{
+      width:min(980px, 92%);
+      margin:0 auto;
+      padding:28px 0 48px;
+    }
+
+    .hero{
+      text-align:center;
+      margin-bottom:24px;
+    }
+
+    .wood-sign{
+      display:inline-block;
+      background:var(--wood);
+      padding:10px 18px;
+      border-radius:10px;
+      font-weight:800;
+      letter-spacing:.02em;
+      box-shadow:0 4px 0 rgba(120,88,42,.12);
+      transform:rotate(-1deg);
+      margin-bottom:12px;
+    }
+
+    h1{
+      margin:0 auto 10px;
+      max-width:760px;
+      font-size:clamp(2rem, 6vw, 4rem);
+      line-height:1.03;
+      letter-spacing:-.03em;
+    }
+
+    .subtitle{
+      margin:0 auto;
+      max-width:720px;
+      color:var(--muted);
+      font-size:clamp(1rem, 2.8vw, 1.2rem);
+      line-height:1.55;
+    }
+
+    .notice{
+      margin:22px auto 28px;
+      max-width:800px;
+      background:var(--yellow);
+      border:1px solid rgba(160,120,40,.13);
+      padding:16px 18px;
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      font-weight:650;
+      line-height:1.5;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .card:nth-child(1){background:linear-gradient(180deg,#fff 0%,#fff8e4 100%)}
+    .card:nth-child(2){background:linear-gradient(180deg,#fff 0%,#fff0f1 100%)}
+    .card:nth-child(3){background:linear-gradient(180deg,#fff 0%,#eef8f1 100%)}
+    .card:nth-child(4){background:linear-gradient(180deg,#fff 0%,#eef5fb 100%)}
+
+    .creature{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:10px;
+    }
+
+    .emoji{
+      font-size:3.2rem;
+      line-height:1;
+      filter:drop-shadow(0 4px 6px rgba(0,0,0,.08));
+    }
+
+    h2{
+      margin:0;
+      font-size:1.45rem;
+    }
+
+    .small{
+      color:var(--muted);
+      margin:4px 0 16px;
+      line-height:1.4;
+      font-size:.96rem;
+    }
+
+    .sounds{
+      display:grid;
+      gap:10px;
+    }
+
+    button{
+      width:100%;
+      border:none;
+      padding:14px 16px;
+      border-radius:16px;
+      font-size:1rem;
+      font-weight:800;
+      cursor:pointer;
+      color:var(--ink);
+      background:white;
+      border:1px solid rgba(23,59,70,.12);
+      box-shadow:0 4px 10px rgba(23,59,70,.07);
+      transition:transform .12s ease, box-shadow .12s ease;
+      text-align:left;
+    }
+
+    button:hover{
+      transform:translateY(-1px);
+      box-shadow:0 7px 15px rgba(23,59,70,.10);
+    }
+
+    button:active{
+      transform:scale(.99);
+    }
+
+    button.playing{
+      outline:3px solid rgba(23,59,70,.16);
+      background:#ffffff;
+    }
+
+    .stop{
+      margin-top:20px;
+      background:var(--ink);
+      color:white;
+      text-align:center;
+    }
+
+    .footer{
+      margin-top:28px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.5;
+    }
+
+    .heart{
+      color:#d75668;
+    }
+
+    @media (max-width:720px){
+      .grid{grid-template-columns:1fr}
+      .wrap{width:min(94%, 680px); padding-top:20px}
+      .card{padding:17px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="wood-sign">Le Guide pour se retrouver en famille</div>
+      <h1>Donnez vie à votre créature !</h1>
+      <p class="subtitle">
+        Choisissez votre créature, cachez le téléphone ou posez-le derrière le canapé,
+        puis lancez les sons au bon moment pendant le jeu.
+      </p>
+    </section>
+
+    <div class="notice">
+      Astuce : commencez par le son d’endormissement. Quand les enfants approchent du trésor,
+      lancez un grognement… puis le gros rugissement pour déclencher le moment « STATUE ! ».
+    </div>
+
+    <section class="grid">
+
+      <article class="card">
+        <div class="creature">
+          <div class="emoji">🦖</div>
+          <div>
+            <h2>Dinosaure</h2>
+            <p class="small">Lent, lourd… et très grognon au réveil.</p>
+          </div>
+        </div>
+        <div class="sounds">
+          <button data-audio="dinosaure/sommeil.mp3">😴 Créature endormie</button>
+          <button data-audio="dinosaure/grognement.mp3">😠 Petit grognement</button>
+          <button data-audio="dinosaure/alerte.mp3">⚠️ Elle bouge…</button>
+          <button data-audio="dinosaure/reveil.mp3">🦖 RUGISSEMENT !</button>
+          <button data-audio="dinosaure/victoire.mp3">🎉 Victoire !</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="creature">
+          <div class="emoji">🐉</div>
+          <div>
+            <h2>Dragon</h2>
+            <p class="small">Un souffle profond… puis le gardien du trésor se réveille.</p>
+          </div>
+        </div>
+        <div class="sounds">
+          <button data-audio="dragon/sommeil.mp3">😴 Dragon endormi</button>
+          <button data-audio="dragon/grognement.mp3">🔥 Il s’agite…</button>
+          <button data-audio="dragon/alerte.mp3">⚠️ Attention au souffle !</button>
+          <button data-audio="dragon/reveil.mp3">🐉 LE DRAGON SE RÉVEILLE !</button>
+          <button data-audio="dragon/victoire.mp3">🎉 Trésor sauvé !</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="creature">
+          <div class="emoji">👹</div>
+          <div>
+            <h2>Monstre</h2>
+            <p class="small">Parfait pour les grimaces, les petits pas… et les gros éclats de rire.</p>
+          </div>
+        </div>
+        <div class="sounds">
+          <button data-audio="monstre/sommeil.mp3">😴 Monstre endormi</button>
+          <button data-audio="monstre/grognement.mp3">👂 Il a entendu quelque chose…</button>
+          <button data-audio="monstre/alerte.mp3">⚠️ Cachez-vous !</button>
+          <button data-audio="monstre/reveil.mp3">👹 LE MONSTRE EST RÉVEILLÉ !</button>
+          <button data-audio="monstre/victoire.mp3">🎉 Bien joué !</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="creature">
+          <div class="emoji">🦍</div>
+          <div>
+            <h2>Gorille</h2>
+            <p class="small">Des ronflements puissants et un réveil spectaculaire.</p>
+          </div>
+        </div>
+        <div class="sounds">
+          <button data-audio="gorille/sommeil.mp3">😴 Gorille endormi</button>
+          <button data-audio="gorille/grognement.mp3">🦍 Petit grondement</button>
+          <button data-audio="gorille/alerte.mp3">⚠️ Il ouvre un œil…</button>
+          <button data-audio="gorille/reveil.mp3">🦍 GROS RUGISSEMENT !</button>
+          <button data-audio="gorille/victoire.mp3">🎉 Mission réussie !</button>
+        </div>
+      </article>
+
+    </section>
+
+    <button class="stop" id="stopAll">⏹ Arrêter tous les sons</button>
+
+    <p class="footer">
+      Une activité du <strong>Guide pour se retrouver en famille</strong><br>
+      Moins d’écrans. Plus de présence. Des souvenirs pour longtemps. <span class="heart">♥</span>
+    </p>
+  </main>
+
+  <audio id="player" preload="none"></audio>
+
+  <script>
+    const player = document.getElementById("player");
+    const buttons = document.querySelectorAll("button[data-audio]");
+    const stopAll = document.getElementById("stopAll");
+    let activeButton = null;
+
+    buttons.forEach(button => {
+      button.addEventListener("click", async () => {
+        const src = button.dataset.audio;
+
+        if (activeButton) activeButton.classList.remove("playing");
+
+        if (!player.paused && player.getAttribute("src") === src) {
+          player.pause();
+          player.currentTime = 0;
+          activeButton = null;
+          return;
+        }
+
+        player.src = src;
+        activeButton = button;
+        button.classList.add("playing");
+
+        try {
+          await player.play();
+        } catch (error) {
+          alert("Le fichier son n’est pas encore disponible ou le navigateur a bloqué la lecture.");
+          button.classList.remove("playing");
+          activeButton = null;
+        }
+      });
+    });
+
+    player.addEventListener("ended", () => {
+      if (activeButton) activeButton.classList.remove("playing");
+      activeButton = null;
+    });
+
+    stopAll.addEventListener("click", () => {
+      player.pause();
+      player.currentTime = 0;
+      if (activeButton) activeButton.classList.remove("playing");
+      activeButton = null;
+    });
+  </script>
+</body>
+</html>
